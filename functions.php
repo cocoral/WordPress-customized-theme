@@ -34,6 +34,24 @@ function theme_setup() {
 		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
 	) );
 
+
+	// add a customized image upload function
+	$defaults = array(
+    'default-image' => get_template_directory_uri() . '/images/hero.jpeg',
+   'random-default'         => false,
+   'width'                  => '1200px',
+   'height'                 => '800px',
+   'flex-height'            => false,
+   'flex-width'             => false,
+   'default-text-color'     => '',
+   'header-text'            => true,
+   'uploads'                => true,
+   'wp-head-callback'       => '',
+   'admin-head-callback'    => '',
+   'admin-preview-callback' => '',
+	);
+	add_theme_support( 'custom-header', $defaults );
+
 }
 endif;
 
@@ -129,7 +147,7 @@ add_filter( 'wp_page_menu_args', 'hackeryou_page_menu_args' );
  * Sets the post excerpt length to 40 characters.
  */
 function hackeryou_excerpt_length( $length ) {
-	return 40;
+	return 100;
 }
 add_filter( 'excerpt_length', 'hackeryou_excerpt_length' );
 
@@ -279,3 +297,18 @@ function get_post_parent($post) {
 		return $post->ID;
 	}
 }
+
+/* hackeryou_get_thumbnail_url: Return current post thumbnail url*/
+function hackeryou_get_thumbnail_url($post) {
+    $imageID = get_post_thumbnail_id($post->ID); 
+    $imageURL = wp_get_attachment_url($imageID);
+    return $imageURL;
+}
+
+/**
+ * Add HTML5 theme support.
+ */
+function wpdocs_after_setup_theme() {
+    add_theme_support( 'html5', array( 'search-form' ) );
+}
+add_action( 'after_setup_theme', 'wpdocs_after_setup_theme' );

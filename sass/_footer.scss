@@ -1,3 +1,17 @@
 footer {
-	clear: both;
+	width: 100%;
+	background:$tiara;
+	.container{
+		display: flex;
+		justify-content:space-between;
+		ul{
+			padding:18px;
+		}	
+		form{
+			padding: 18px;
+			input{
+				border:none;
+			}
+		}
+	}
 }

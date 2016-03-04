@@ -7,6 +7,25 @@
 * Author URI: http://coralxhe.com
 */
 
+/*
+====================================
+variables
+====================================
+*/
+
+$riptide:#8AEAE8;
+$saffron:#F9B81F;
+$tiara:#B3CCC8;
+$cararra:#EEECE7;
+$almostblack:#251F1E;
+
+
+
+//FONT FAMILY
+
+$playfair: 'Playfair Display', serif;
+$lato:'Lato', sans-serif;
+
 @import 'normalize';
 @import 'typography';
 @import 'navigation';
@@ -19,6 +38,15 @@ Default Styling
 ====================================
 */
 
+a {
+	color: $almostblack;
+	text-decoration: none;
+	transition:all .3s;
+	&:hover {
+		color: $saffron;
+	}
+}
+
 img {
 	max-width: 100%;
 }
@@ -30,20 +58,73 @@ body {
 .container {
 	max-width: 1200px;
 	margin: 0 auto;
+
 }
 
 .content {
-	float: left;
 	width: 65%;
 	margin-right: 5%;
+	margin:0 auto;
 }
 
 .full {
 	width: 100%;
 }
 
-// header
+//blog
+main{
+	margin-top: 60px;
 
+	.container{
+		text-align: center;
+		position: relative;
+		article{
+			margin-top: 40px;
+			margin-bottom: 40px;
+		}
+		h2{
+			color:$riptide;
+			letter-spacing: 3px;
+			margin-bottom: 0;
+		}
+		.authorAndDate{
+			p{
+				display: inline-block; 
+				margin-top: 0;
+				&:first-child{
+					margin-right: 30px;
+				}
+			}
+
+		}
+		.intro{
+				margin-top: 5px;
+				&:after{
+					content: "";
+					display: block;
+					margin:0 auto;
+					height: 15px;
+					border-bottom: 1px solid $riptide;
+					width: 70px;
+				}
+		}
+	
+	}
+}
+
+
+// footer
+footer{
+	display: flex;
+	.footerColumn{
+		width:25%;
+		#menu-navmenu-1,
+		#menu-iconsmenu{
+			display: flex;
+			flex-direction:column;	
+		}
+	}
+}
 
 
 

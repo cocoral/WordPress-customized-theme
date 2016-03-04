@@ -1,14 +1,51 @@
 ul.menu {
 	margin: 0;
-	padding: 0;
+	padding: 50px;
+	display: flex;
+	justify-content:space-around;	
 	li {
 		display: inline;
 		margin-right: 10px;
 		a {
-			color: #333;
 			padding: 10px;
-			background: #333;
-			color: white;
+			color: $almostblack;
+			letter-spacing: 5px;
+			font-weight: 300;
+			&:hover{
+				color: $saffron;
+			}
 		}
+	}
+}
+
+// header
+header{
+	.container{
+		width: 100%;
+	}
+	ul{
+		#menu-item-1530{
+			margin-right: 30%;
+		}
+	}
+	.logoWrapper{
+		position: absolute;
+		width:20%;
+		left:40%;
+		h5{
+			margin:0;
+			font-family: $lato;
+			letter-spacing: 5px;
+			font-weight: 300;
+		}
+		.logo{
+			display: flex;
+			flex-direction:column;
+			.logoImg,
+			.logoWords{
+				display: inline-block;
+				text-align: center;
+			}
+		}		
 	}
 }

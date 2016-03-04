@@ -8,7 +8,7 @@
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
   <!-- stylesheets should be enqueued in functions.php -->
   <?php wp_head(); ?>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic|Lato:300,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
 </head>
 
@@ -19,11 +19,15 @@
   <div class="container">
 
 
-      <a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home">
-        <div class="logoImg"> <img src=" <?php bloginfo('template_directory')?>/images/logo.png" alt=""></div>
-        <h5><?php bloginfo( 'name' ); ?></h5>
-        <h5><?php echo date('Y'); ?></h5>
-      </a>
+      <div class='logoWrapper'>
+        <a class='logo' href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home">
+          <div class="logoImg"> <img src=" <?php bloginfo('template_directory')?>/images/logo.png" alt=""></div>
+          <div class='logoWords'>
+            <h5><?php bloginfo( 'name' ); ?></h5>
+            <h5><?php echo date('Y'); ?></h5>
+          </div>         
+        </a>
+      </div>
 
 
     <?php wp_nav_menu( array(

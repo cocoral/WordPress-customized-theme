@@ -17,29 +17,38 @@
 <?php while ( have_posts() ) : the_post(); ?>
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<h2 class="entry-title">
-        <a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
-          <?php the_title(); ?>
-        </a>
-      </h2>
+			<h3 class="entry-title">
+		        <a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
+		          <?php the_title(); ?>
+		        </a>
+	        </h3>
+			<div class='authorAndDate'>
+				<a href="<?php echo get_author_posts_url(get_the_author_meta('ID'),get_the_author_meta('user_nicename')) ?>"><p><?php the_author(); ?></p></a>
 
+				<p><?php the_time( 'F j Y' ); ?></p>
+			</div>
 			<section class="entry-content">
-				<?php the_content('Continue reading <span class="meta-nav">&rarr;</span>'); ?>
+				<div class="post-feature-img">
+	                <?php $imgURL = hackeryou_get_thumbnail_url($post);?>
+	                <img src="<?php echo $imgURL ?>" alt="">
+           		 </div>
+				<?php the_excerpt(); ?>
+			
 				<?php wp_link_pages( array(
           'before' => '<div class="page-link"> Pages:',
           'after' => '</div>'
         )); ?>
 			</section><!-- .entry-content -->
 
-			<footer>
+			<div class='blogFooter'>
 				<p><?php the_tags('Tags: ', ', ', '<br>'); ?> Posted in <?php the_category(', '); ?></p>
         <p><?php comments_popup_link('Respond to this post &raquo;', '1 Response &raquo;', '% Responses &raquo;'); ?></p>
         <p><?php edit_post_link( 'Edit', '<span class="edit-link">', '</span>' ); ?></p>
-			</footer>
+			</div>
 
 		</article><!-- #post-## -->
 
-		<?php comments_template( '', true ); ?>
+		// <?php comments_template( '', true ); ?>
 
 
 <?php endwhile; // End the loop. Whew. ?>
