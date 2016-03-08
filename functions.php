@@ -101,6 +101,15 @@ function hackeryou_scripts() {
     null, // version number
     true //load in footer
   );
+
+  wp_enqueue_script(
+    'flickity', //handle
+    'https://npmcdn.com/flickity@1.1/dist/flickity.pkgd.min.js', //source
+    array( 'jquery', 'plugins' ), //dependencies
+    null, // version number
+    true //load in footer
+  );
+
 }
 
 add_action( 'wp_enqueue_scripts', 'hackeryou_scripts');

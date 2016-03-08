@@ -2,7 +2,8 @@
   <div class='container'>
     <div class="footerColumn">
       <p><?php bloginfo( 'name' ); ?></p>
-      <p>&copy; Coded by Coral <?php echo date('Y'); ?></p>
+      <p>&copy; Coded by Coral </p>
+      <p>Powered by WordPress <?php echo date('Y'); ?></p>
       
     </div>
     <div class="footerColumn">
@@ -25,15 +26,17 @@
                 placeholder="<?php echo esc_attr_x( 'Search …', 'placeholder' ) ?>"
                 value="<?php echo get_search_query() ?>" name="s"
                 title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
+                <i class="fa fa-search"></i>
         </label>
-        <input type="submit" class="search-submit"
-            value="<?php echo esc_attr_x( 'Search', 'submit button' ) ?>" />
+        <input type="submit" class="search-submit" value="     "/>
       </form>
     </div>
   </div>
 </footer>
 
+
 <script>
+
 // scripts.js, plugins.js and jquery are enqueued in functions.php
 /* Google Analytics! */
  var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]]; // Change UA-XXXXX-X to be your site's ID
@@ -41,6 +44,7 @@
  g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
  s.parentNode.insertBefore(g,s)}(document,"script"));
 </script>
+
 
 <?php wp_footer(); ?>
 </body>

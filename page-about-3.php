@@ -18,9 +18,9 @@
       <?php endwhile; // end the loop?>
     </div> <!-- /.pagecontent -->
 
-
-    <?php get_sidebar(); ?>
-
+    <div class="main-gallery">
+      <div class="gallery-cell"><img src="<?php bloginfo('template_directory')?>/images/1.jpg" alt="galleryItem"></div>
+  </div>
   </div> <!-- /.content -->
 </div> <!-- /.container -->
 

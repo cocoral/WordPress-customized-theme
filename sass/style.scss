@@ -32,6 +32,7 @@ $lato:'Lato', sans-serif;
 @import 'sidebar';
 @import 'comments';
 @import 'footer';
+
 /*
 ====================================
 Default Styling
@@ -62,13 +63,25 @@ body {
 }
 
 .content {
-	width: 65%;
+	width: 80%;
 	margin-right: 5%;
 	margin:0 auto;
 }
 
 .full {
 	width: 100%;
+}
+
+.intro{
+		margin-top: 5px;
+		&:after{
+			content: "";
+			display: block;
+			margin:0 auto;
+			height: 15px;
+			border-bottom: 1px solid $riptide;
+			width: 70px;
+		}
 }
 
 //blog
@@ -79,15 +92,20 @@ main{
 		text-align: center;
 		position: relative;
 		article{
-			margin-top: 40px;
+			margin-top: 60px;
 			margin-bottom: 40px;
 		}
 		h2{
-			color:$riptide;
 			letter-spacing: 3px;
 			margin-bottom: 0;
 		}
+		p{
+			width:80%;
+			margin:20px auto;
+		}
 		.authorAndDate{
+			display: flex;
+			justify-content:space-between;
 			p{
 				display: inline-block; 
 				margin-top: 0;
@@ -95,36 +113,202 @@ main{
 					margin-right: 30px;
 				}
 			}
-
 		}
-		.intro{
-				margin-top: 5px;
-				&:after{
-					content: "";
-					display: block;
-					margin:0 auto;
-					height: 15px;
-					border-bottom: 1px solid $riptide;
-					width: 70px;
-				}
+		.entry-content a{
+			color:$riptide;
+			// font-weight: 700;
+		}
+		.tags a,
+		.category a{
+			background:$cararra;
+			padding: 2px;
+			border-radius: 2px;
+		}
+		.blogFooter{
+			display: flex;
+			justify-content:space-around;
 		}
 	
 	}
 }
 
 
-// footer
-footer{
-	display: flex;
-	.footerColumn{
-		width:25%;
-		#menu-navmenu-1,
-		#menu-iconsmenu{
-			display: flex;
-			flex-direction:column;	
+/*
+====================================
+Front Page Styling
+====================================
+*/
+.hero{
+	padding: 20px;
+	margin:0 auto;
+	margin-top: 50px;
+	width: 80%;
+	height: 75vh;
+	background-size: cover;
+	text-align: center;
+	color: $cararra;
+	.wrapper{
+		margin-top: 23vh;
+		p{
+			width:70%;
+			margin:0 auto;
 		}
 	}
 }
+
+.home{
+	padding-bottom: 60px;
+
+	.content{
+		text-align: center;
+		h2{
+			margin-bottom: 10px;
+		}
+		p{
+			width: 70%;
+			margin:0 auto;
+			padding-bottom: 20px;
+		}
+		ul{
+			display: flex;
+			padding:10px;
+	
+			li{
+				width:25%;
+				font-weight:300;
+				img{
+					width: 100px;
+				}
+			}
+		}
+	}
+}
+
+/*
+====================================
+Page Page Styling
+====================================
+*/
+.pageContent{
+	margin-top: 60px;
+	text-align: center;
+	h2 ~ p:after{
+		content: "";
+		display: block;
+		margin:0 auto;
+		height: 15px;
+		border-bottom: 1px solid $riptide;
+		width: 70px;
+	
+	}
+}
+.contactContent{
+	padding-top: 30px;
+	width:70%;
+	float: left;
+	text-align: left;
+	.address {
+		p{
+			margin:5px;
+		}
+		h3{
+		margin:0;
+		// color:$riptide;
+
+		}
+	}
+	.wpcf7-form{
+		margin:30px 120px 0 0;
+		input,
+		textarea{
+			width: 100%;
+			resize: none;
+			padding: 10px;
+			border:1px solid $cararra;
+		}
+		input[type="submit"]{
+			width:30%;
+			text-align: center;
+			background:$riptide;
+			transition: all .3s;
+			border:none;
+			&:hover{
+				color:$saffron;
+			}
+
+		}
+	}
+}
+.sidebar{
+	padding-top: 30px;
+	padding-bottom: 60px;
+	width:30%;
+}
+
+/*
+====================================
+Single Page Styling
+====================================
+*/
+.singleContainer{
+	max-width: 1200px;
+	margin: 0 auto;
+	margin-top: 60px;
+}
+.comments-area {
+	padding-top: 60px;
+	.comments-title{
+		text-align: center;
+	}
+}
+.comments-area footer{
+	background:white;
+	position: relative;
+	.comment-metadata{
+		position: absolute;
+		bottom: 0;
+		margin-left: 60px;
+	}
+}
+
+.comment-respond{
+	textarea{
+		border:1px solid $cararra;
+		resize: none;
+		
+	}
+	input[type='submit']{
+		padding: 10px;
+		margin-top: 20px;
+		background:$riptide;
+		transition: all .3s;
+		border:none;
+		&:hover{
+			color:$saffron;
+		}
+
+	}
+}
+
+/*
+====================================
+flikity Styling
+====================================
+*/
+
+.main-gallery{
+	margin-bottom: 60px;
+}
+
+
+/*
+====================================
+media query
+====================================
+*/
+
+
+
 
 
 

@@ -4,13 +4,19 @@ html{
 
 body{
 	font-size: 1.2rem;
+	color: $almostblack;
 }
 
 h1,h2,h3,h4,h5{
 	font-family: $playfair,
+
+}
+h1{
+	font-size: 4rem;
 }
 h2{
 	font-size: 3rem;
+	color:$riptide;
 }
 h3{
 	font-size: 2rem;
@@ -61,6 +67,8 @@ dd {
 
 ul li, ol li {
 	padding: 3px;
+	text-decoration: none;
+	list-style: none;
 }
 
 /*PRE*/

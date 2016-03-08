@@ -9,7 +9,9 @@
   <!-- stylesheets should be enqueued in functions.php -->
   <?php wp_head(); ?>
   <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic|Lato:300,700' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://npmcdn.com/flickity@1.1/dist/flickity.min.css">
+  <script src="https://npmcdn.com/flickity@1.1/dist/flickity.pkgd.min.js"></script>
 </head>
 
 
@@ -29,7 +31,10 @@
         </a>
       </div>
 
-
+    <input type="checkbox" id="nav__dropDownMenu_checkbox">
+    <label for="nav__dropDownMenu_checkbox" class="nav__menuBtn" id="nav__menuBtn">
+      <div class="nav__menuBtn_bar"></div>
+    </label>
     <?php wp_nav_menu( array(
       'container' => false,
       'theme_location' => 'primary'

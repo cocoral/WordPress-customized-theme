@@ -23,14 +23,16 @@
 		        </a>
 	        </h3>
 			<div class='authorAndDate'>
-				<a href="<?php echo get_author_posts_url(get_the_author_meta('ID'),get_the_author_meta('user_nicename')) ?>"><p><?php the_author(); ?></p></a>
+				<p><a href="<?php echo get_author_posts_url(get_the_author_meta('ID'),get_the_author_meta('user_nicename')) ?>"><?php the_author(); ?></a></p>
 
 				<p><?php the_time( 'F j Y' ); ?></p>
+				<p><i class="fa fa-comment-o"></i> <?php comments_popup_link(' 0 &raquo',' 1 &raquo',' % &raquo'); ?> </p>
 			</div>
 			<section class="entry-content">
 				<div class="post-feature-img">
-	                <?php $imgURL = hackeryou_get_thumbnail_url($post);?>
+	                 <a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark"><?php $imgURL = hackeryou_get_thumbnail_url($post);?>
 	                <img src="<?php echo $imgURL ?>" alt="">
+	                </a>
            		 </div>
 				<?php the_excerpt(); ?>
 			
@@ -41,14 +43,15 @@
 			</section><!-- .entry-content -->
 
 			<div class='blogFooter'>
-				<p><?php the_tags('Tags: ', ', ', '<br>'); ?> Posted in <?php the_category(', '); ?></p>
-        <p><?php comments_popup_link('Respond to this post &raquo;', '1 Response &raquo;', '% Responses &raquo;'); ?></p>
-        <p><?php edit_post_link( 'Edit', '<span class="edit-link">', '</span>' ); ?></p>
+				<p class='tags'><?php the_tags('', ' ', ''); ?> 
+				</p>
+				<p class='category'>In category of <?php the_category(', '); ?></p>
 			</div>
 
 		</article><!-- #post-## -->
 
-		// <?php comments_template( '', true ); ?>
+		<p>//</p>
+		 <?php comments_template( '', true ); ?>
 
 
 <?php endwhile; // End the loop. Whew. ?>

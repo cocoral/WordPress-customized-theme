@@ -1,16 +1,40 @@
 footer {
 	width: 100%;
 	background:$tiara;
+	display: flex;
+
 	.container{
+		width: 65%;
 		display: flex;
 		justify-content:space-between;
+		.footerColumn{
+			width:25%;
+			#menu-navmenu-1,
+			#menu-iconsmenu{
+				display: flex;
+				flex-direction:column;	
+			}
+		}
 		ul{
 			padding:18px;
 		}	
 		form{
 			padding: 18px;
+			position: relative;
+			i{
+				position: absolute;
+				right:10px;
+				top: 35px;
+			}
 			input{
 				border:none;
+				background:$cararra;
+				margin:10px;
+				padding: 5px;
+				width:100%;
+			}
+			input[type='submit']{
+				display: none;
 			}
 		}
 	}
