@@ -10,8 +10,8 @@
   <?php wp_head(); ?>
   <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic|Lato:300,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://npmcdn.com/flickity@1.1/dist/flickity.min.css">
-  <script src="https://npmcdn.com/flickity@1.1/dist/flickity.pkgd.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/flickity@1.1/dist/flickity.min.css">
+  <script src="https://unpkg.com/flickity@1.1/dist/flickity.pkgd.min.js"></script>
 </head>
 
 
